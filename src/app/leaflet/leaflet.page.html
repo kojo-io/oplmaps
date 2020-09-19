@@ -1,0 +1,35 @@
+<ion-content fullscreen="true">
+  <div id="map" style='height: 70%; z-index: 0'></div>
+  <div style="height: 30%;background-color: white; z-index: 1">
+        <div class="ion-padding">
+          <mat-form-field class="example-full-width" appearance="outline" (click)="OpenSheet()" *ngIf="!setMarker">
+            <input type="text" placeholder="Where To" matInput readonly/>
+          </mat-form-field>
+          <div *ngIf="setMarker">
+            <ion-button expand="full" *ngIf="setDestMark" (click)="setDestinationLatLng()" class="mt-1 font-weight-bold">DONE</ion-button>
+            <ion-button expand="full" *ngIf="setPickUpMark" (click)="setPickUpLatLng()" class="mt-1 font-weight-bold">DONE</ion-button>
+          </div>
+        </div>
+  </div>
+</ion-content>
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button>
+    <ion-icon name="filter-outline"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button (click)="setPin()">
+      <ion-icon name="locate-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="startMoving()">
+      <ion-icon name="navigate-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="openMaps()" *ngIf="routing">
+      <ion-icon name="open-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button (click)="fitView()">
+      <ion-icon name="scan-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+<bottom-sheet [(State)]="BottomSheetState" (StateChange)="StateChanged($event)" [ShowBackdrop]="false" [Fullscreen]="true">
+</bottom-sheet>

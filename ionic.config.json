@@ -1,0 +1,7 @@
+{
+  "name": "oplmaps",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
