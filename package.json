@@ -37,6 +37,7 @@
     "leaflet": "^1.6.0",
     "leaflet-routing-machine": "^3.2.12",
     "leaflet.locatecontrol": "^0.72.0",
+    "ng-zorro-antd": "^9.3.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

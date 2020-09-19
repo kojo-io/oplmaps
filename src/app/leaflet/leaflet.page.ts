@@ -71,12 +71,12 @@ export class LeafletPage implements OnInit, AfterViewInit {
         // this.marker.addTo(this.map);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
             .addTo(this.map);
-        this.mylocation = L.control.locate({setView: true, showCompass: true, keepCurrentZoomLevel: true, watch: true}).addTo(this.map);
+        this.mylocation = L.control.locate({setView: 'always', showCompass: true, keepCurrentZoomLevel: true, watch: true}).addTo(this.map);
         this.mylocation.start();
         this.mylocation.stopFollowing();
       }).catch((error) => {
       });
-    }, 1000);
+    }, 2000);
   }
 
   public async OpenSheet() {
@@ -145,7 +145,7 @@ export class LeafletPage implements OnInit, AfterViewInit {
     if (this.mylocation) {
       this.mylocation.stopFollowing();
     } else {
-      this.mylocation = L.control.locate({setView: true, showCompass: true, keepCurrentZoomLevel: true}).addTo(this.map);
+      this.mylocation = L.control.locate({setView: 'always', showCompass: true, keepCurrentZoomLevel: true}).addTo(this.map);
       this.mylocation.start();
       this.mylocation.stopFollowing();
     }

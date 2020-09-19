@@ -7,39 +7,31 @@
 </ion-toolbar>
 
 <ion-content>
-  <div class="ion-padding">
+  <div>
    <ion-row>
-     <ion-col size="10">
-       <mat-form-field class="example-full-width" appearance="outline">
-         <mat-label>Start Position</mat-label>
-         <input type="text" #startPos  placeholder="Start Position" matInput [(ngModel)]="pickUpText" (keydown.enter)="searchPickUp(startPos.value)"/>
-         <div matSuffix>
-           <ion-fab-button (click)="getPickupLatLng()" size="small">
-             <ion-icon name="locate-outline"></ion-icon>
-           </ion-fab-button>
-         </div>
-       </mat-form-field>
-     </ion-col>
-     <ion-col size="2">
-       <ion-fab-button (click)="searchPickUp(startPos.value)">
-         <ion-icon name="search-outline"></ion-icon>
-       </ion-fab-button>
+     <ion-col size="12">
+       <nz-input-group nzCompact nzSize="large">
+         <input type="text" nzSize="large" nz-input #startPos  placeholder="Start Position" style="width: 70%" [(ngModel)]="pickUpText" (keydown.enter)="searchPickUp(startPos.value)" />
+         <button nz-button nzType="primary" nzSize="large" (click)="getPickupLatLng()" style="width: 15%;">
+           <i nz-icon nzType="aim" nzTheme="outline"></i>
+         </button>
+         <button nz-button nzType="primary" (click)="searchPickUp(startPos.value)" nzSize="large" style="width: 15%;">
+           <i nz-icon nzType="search" nzTheme="outline"></i>
+         </button>
+       </nz-input-group>
      </ion-col>
    </ion-row>
     <ion-row>
-      <ion-col size="10">
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>End Position</mat-label>
-          <input type="text" #endPos (keydown.enter)="searchDest(endPos.value)" placeholder="End Position" matInput [(ngModel)]="destinationText"/>
-          <ion-fab-button (click)="getDestinationLatLng()" matSuffix size="small">
-            <ion-icon name="locate-outline"></ion-icon>
-          </ion-fab-button>
-        </mat-form-field>
-      </ion-col>
-      <ion-col size="2">
-        <ion-fab-button (click)="searchDest(endPos.value)">
-          <ion-icon name="search-outline"></ion-icon>
-        </ion-fab-button>
+      <ion-col size="12">
+        <nz-input-group nzCompact nzSize="large">
+          <input type="text" nzSize="large" nz-input #endPos (keydown.enter)="searchDest(endPos.value)" placeholder="End Position" style="width: 70%" [(ngModel)]="destinationText" />
+          <button nz-button nzType="primary" nzSize="large" (click)="getDestinationLatLng()" style="width: 15%;">
+            <i nz-icon nzType="aim" nzTheme="outline"></i>
+          </button>
+          <button nz-button nzType="primary" (click)="searchDest(endPos.value)" nzSize="large" style="width: 15%;">
+            <i nz-icon nzType="search" nzTheme="outline"></i>
+          </button>
+        </nz-input-group>
       </ion-col>
     </ion-row>
     <ion-button expand="full" (click)="mapRoute()" class="mt-1 font-weight-bold">ROUTE</ion-button>

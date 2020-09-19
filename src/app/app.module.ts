@@ -13,6 +13,13 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { en_US } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,13 +31,15 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    FormsModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Geolocation,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]
 })

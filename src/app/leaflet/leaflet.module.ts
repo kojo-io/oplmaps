@@ -13,6 +13,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {SearchCompComponent} from './search-comp/search-comp.component';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 @NgModule({
   entryComponents: [ SearchCompComponent],
@@ -24,7 +25,8 @@ import {SearchCompComponent} from './search-comp/search-comp.component';
         MatInputModule,
         MatAutocompleteModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        NgZorroAntdModule
     ],
   declarations: [LeafletPage, SearchCompComponent]
 })
